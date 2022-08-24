@@ -5,15 +5,18 @@ const shortTitle = (title) => {
 }
 export { shortTitle };
 
+
+
 const breakLine = (description) => {
-
-/*  const split = description.split(" ");
-    const newDescription = `${split[0]} ${split[1]} ${split[2]} ${split[3]} ${split[4]} ${split[5]}`;
-    return newDescription; */
-
-/*     const length = description.length();
-    for (let index = 10; index < length; index+10) {
-        const newDescription = ;
-    } */
+    const res = [];
+    for (let i = 0; i < description.length; i += 50) {
+        const chunk = description.slice(i,  i + 50);
+        res.push(chunk);
+    }
+    return res;
 }
 export { breakLine }
+
+/* 
+breakLine(description, 20).join('<br/>')
+{breakLine(description, 20).map(x => ({x}<br/>))} */
