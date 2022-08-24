@@ -1,9 +1,14 @@
-import React from 'react';
-import { shortTitle } from '../helper/functions';   //Function
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContextProvider';   //Context
+import { shortTitle, isInCart } from '../helper/functions';   //Function
 import { breakLine } from '../helper/functions';    //Function
 
 // productData props, This props is inside the map() of the Store.js component
 const Product = ({ productData }) => {
+
+    // get state and dispatch object with destructuring
+    const { state, dispatch } = useContext(CartContext);
+
     return (
         <div>
             <img src={productData.image} alt="product" style={{ width: "200px" }} />
@@ -16,7 +21,13 @@ const Product = ({ productData }) => {
 
             <span>{productData.price}</span>
             <div>
-                <button>Add to Cart</button>
+                {
+                    isInCart(productData.id, state)
+                        ?
+                        <button onClick={() => dispatch({ type: "INCREASE", payload: productData })} >+</button>
+                        :
+                        <button onClick={() => dispatch({ type: "ADD_ITEM", payload: productData })}>Add to Cart</button>
+                }
             </div>
         </div>
     );
