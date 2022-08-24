@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { getProducts } from '../services/api';  //API
 
-
+// import in store component
 export const ProductsContext = createContext();
 
 const ProductContextProvider = (props) => {
