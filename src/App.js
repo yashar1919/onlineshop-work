@@ -1,10 +1,15 @@
 import './App.css';
+import Store from './components/Store';   //Component
+import ProductContextProvider from './context/ProductContextProvider';  //Context
+import CartContextProvider from './context/CartContextProvider';  //Context
 
 function App() {
   return (
-    <div className="App">
-      App component
-    </div>
+    <ProductContextProvider>
+      <CartContextProvider>
+        <Store />
+      </CartContextProvider>
+    </ProductContextProvider>
   );
 }
 
