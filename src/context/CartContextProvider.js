@@ -8,11 +8,23 @@ const initialState = {
     checkout: false
 }
 
+// selectedItems array, is the input of sumItems function
+// It checks each of the selectedItems and adds their quantity together = itemsCounter
+// Each quantity is multiplied by the price of each product and added to the others = totalPrice
+const sumItems = (items) => {
+    const itemsCounter = items.reduce((total, product) => total + product.quantity, 0);
+    let totalPrice = items.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+    return {
+        itemsCounter: itemsCounter,
+        totalPrice: totalPrice
+    }
+}
 
 
 const cartReducer = (state, action) => {
 
- //   console.log(state)
+ // console.log(state)
+
     switch (action.type) {
         case "ADD_ITEM":
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
@@ -24,6 +36,7 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedItems: [...state.selectedItems],
+                ...sumItems(state.selectedItems),
                 checkout: false
             }
 
@@ -33,6 +46,7 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedItems: [...newSelectedItem],
+                ...sumItems(newSelectedItem),
             }
 
         case "INCREASE":
@@ -40,6 +54,7 @@ const cartReducer = (state, action) => {
             state.selectedItems[indexI].quantity++;
             return {
                 ...state,
+                ...sumItems(state.selectedItems),
             }
 
         case "DECREASE":
@@ -47,6 +62,7 @@ const cartReducer = (state, action) => {
             state.selectedItems[indexD].quantity--;
             return {
                 ...state,
+                ...sumItems(state.selectedItems),
             }
 
         case "CHECKOUT":

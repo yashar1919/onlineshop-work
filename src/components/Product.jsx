@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';   //Context
 import { shortTitle, isInCart, quantityCount } from '../helper/functions';   //Function
-import { breakLine } from '../helper/functions';    //Function
+//import { breakLine } from '../helper/functions';    //Function
 import trash from "../icons/trash.svg"  //icon
 
 // productData props, This props is inside the map() of the Store.js component
@@ -32,7 +32,7 @@ const Product = ({ productData }) => {
                 {
                     quantityCount(productData.id, state) === 1
                     &&
-                    <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: productData })}><img src={trash} style={{ width: "20px" }} /></button>
+                    <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: productData })}><img src={trash} alt="trashIcon" style={{ width: "20px" }} /></button>
                 }
 
                 {
