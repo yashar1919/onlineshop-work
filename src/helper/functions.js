@@ -29,3 +29,16 @@ const isInCart = (id, state) => {
     return result;
 }
 export { isInCart };
+
+
+// Counts the products in the Cart
+const quantityCount = (id, state) => {
+    const index = state.selectedItems.findIndex(item => item.id === id);
+    if (index === -1) {
+        return false
+    } else {
+        return state.selectedItems[index].quantity;
+    }
+}
+
+export { quantityCount };

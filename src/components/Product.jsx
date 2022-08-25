@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';   //Context
-import { shortTitle, isInCart } from '../helper/functions';   //Function
+import { shortTitle, isInCart, quantityCount } from '../helper/functions';   //Function
 import { breakLine } from '../helper/functions';    //Function
 
 // productData props, This props is inside the map() of the Store.js component
@@ -28,6 +28,28 @@ const Product = ({ productData }) => {
                         :
                         <button onClick={() => dispatch({ type: "ADD_ITEM", payload: productData })}>Add to Cart</button>
                 }
+
+                {
+                    quantityCount(productData.id, state) > 1
+                    &&
+                    <button onClick={() => dispatch({ type: "DECREASE", payload: productData })}>-</button>
+                }
+
+
+                {
+                    quantityCount(productData.id, state) === 1
+                    &&
+                    <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: productData })}>Remove</button>
+                }
+
+
+                {
+                    quantityCount(productData.id, state) > 0
+                    &&
+                    <span>{quantityCount(productData.id, state)}</span>
+                }
+
+
             </div>
         </div>
     );
