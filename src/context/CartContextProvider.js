@@ -23,7 +23,7 @@ const sumItems = (items) => {
 
 const cartReducer = (state, action) => {
 
- // console.log(state)
+    // console.log(state)
 
     switch (action.type) {
         case "ADD_ITEM":
