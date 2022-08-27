@@ -7,3 +7,10 @@ const getProducts = async () => {
     return response.data;
 }
 export { getProducts };
+
+
+const getUser = async () => {
+    const response = await axios.get(`${BASE_URL}/users/1`);
+    return response.data;
+}
+export { getUser };
