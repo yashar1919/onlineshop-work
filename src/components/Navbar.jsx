@@ -3,30 +3,20 @@ import { CartContext } from '../context/CartContextProvider';    //Context
 import cart from "../icons/cart.png";   //Icon
 import logo from "../icons/logo.png";   //Icon
 import { Link } from 'react-router-dom';
-import { getUser } from '../services/api';
+import { UserContext } from '../context/UserContextProvider';
 
 
 const Navbar = () => {
 
     const { state } = useContext(CartContext);
-    const [user, setUser] = useState("");
-
-    useEffect(() => {
-        const fetchAPI = async () => {
-            setUser(await getUser());
-        }
-
-        fetchAPI();
-
-    }, []);
-
-
+    const user = useContext(UserContext)
+    
 
     return (
         <div>
             <div>
                 {/* <img /> */}
-                <p>{`Hi, ${user.username}`}</p>
+                <Link to="/userdetails">Hi, {user?.name?.firstname}</Link>
 
                 <div>
                     <Link to="/cart">

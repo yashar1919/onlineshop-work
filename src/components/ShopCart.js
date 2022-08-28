@@ -12,7 +12,7 @@ const ShopCart = () => {
     return (
         <div>
             <div>
-                {state.selectedItems.map(item => <Cart key={item.id} data={item} />)}
+                {state.selectedItems.map((item, index) => <Cart key={item.id} data={item} index={index} />)}
             </div>
 
             {

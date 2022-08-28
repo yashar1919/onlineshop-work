@@ -5,17 +5,22 @@ import ProductContextProvider from './context/ProductContextProvider';  //Contex
 import CartContextProvider from './context/CartContextProvider';  //Context
 import { Route, Routes, Navigate } from "react-router-dom";
 import ShopCart from './components/ShopCart';
+import UserDetails from './components/UserDetails';
+import UserContextProvider from './context/UserContextProvider';
 
 function App() {
   return (
     <ProductContextProvider>
       <CartContextProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/products" element={<Store />} />
-          <Route path="/cart" element={<ShopCart />} />
-          <Route path="/*" element={<Navigate to="/products" />} />
-        </Routes>
+        <UserContextProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/products" element={<Store />} />
+            <Route path="/userdetails" element={<UserDetails />} />
+            <Route path="/cart" element={<ShopCart />} />
+            <Route path="/*" element={<Navigate to="/products" />} />
+          </Routes>
+        </UserContextProvider>
       </CartContextProvider>
     </ProductContextProvider>
   );
