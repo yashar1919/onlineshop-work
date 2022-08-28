@@ -1,29 +1,33 @@
-import React, { useContext, useEffect,useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../context/CartContextProvider';
+import { shortTitle } from '../helper/functions';   //Function
+
+
 
 const Cart = (props) => {
 
-    const { title, description, quantity, price } = props.data;
+    const { index, data } = props;
+    const { title, description, quantity, price } = data;
     const { dispatch } = useContext(CartContext);
 
     /* const [counter, setCounter] = useState(0); */
 
-/*     const count = () => {
-        setCounter(prevCounter => prevCounter + 1)
-    } */
+    /*     const count = () => {
+            setCounter(prevCounter => prevCounter + 1)
+        } */
 
-/*     useEffect(() => {
-        setCounter(prevCounter => prevCounter + 1)
-    },[]); */
+    /*     useEffect(() => {
+            setCounter(prevCounter => prevCounter + 1)
+        },[]); */
 
 
 
     return (
         <div>
-            <p>number of product</p>
+            <p>{index + 1}</p>
 
             <div>
-                <h2>{title}</h2>
+                <h2>{shortTitle(title)}</h2>
             </div>
 
             <div>

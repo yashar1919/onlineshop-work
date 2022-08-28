@@ -25,14 +25,14 @@ const Store = () => {
         products.filter(item => item.title.toLowerCase().includes(search.trim().toLowerCase()))
         :
         products
-    ;    
+    ;
 
     results = category
         ?
         results.filter(item => item.category.toLowerCase() === (category.toLowerCase()))
         :
         results
-    ;    
+    ;
 
 
     return (
