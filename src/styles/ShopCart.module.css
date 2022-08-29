@@ -1,5 +1,4 @@
 .container {
- /*  display: flex; */
   justify-content: space-between;
   align-items: flex-start;
   margin: 150px 175px 50px;
@@ -96,6 +95,9 @@
 .complete a:hover {
   background-color: #08499d;
 }
+
+
+
 
 @media (max-width: 1200px) {
   .container {

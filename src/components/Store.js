@@ -42,7 +42,7 @@ const Store = () => {
         <div className={styles.container}>
 
             <div className={styles.searchCategory}>
-                <input className={styles.searchbar} type="text" placeholder='Search' value={search} onChange={searchHandler} />
+                <input className={styles.searchbar} type="text" placeholder="Search..." value={search} onChange={searchHandler} />
 
                 <div>
                     <label>Category: </label>

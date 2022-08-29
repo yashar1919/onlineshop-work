@@ -26,6 +26,7 @@
   border-right: none;
   height: 25px;
   margin-left: 10px;
+  background-color: #f7f7f7;
 }
 
 .searchCategory {
@@ -41,6 +42,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+
+
 
 @media (max-width: 1200px) {
   .container {
