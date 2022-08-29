@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { ProductsContext } from '../context/ProductContextProvider';    //Context
+import Loading from './Loading';  //Component  
 import Product from "./Product"  //Component
 
 const Store = () => {
@@ -56,7 +57,7 @@ const Store = () => {
                     ?
                     <div>{results.map(item => <Product key={item.id} productData={item} />)}</div>
                     :
-                    <h1>Loading...</h1>
+                    <Loading />
             }
         </div>
     );
