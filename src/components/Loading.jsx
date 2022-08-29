@@ -1,11 +1,12 @@
 import React from 'react';
 import loader from "../icons/loader.gif";
+import styles from "../styles/Loading.module.css";
 
 const Loading = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <img src={loader} alt='Loading' />
-            <h1>L O A D I N G...</h1>
+            <h1 className={styles.loading}>L O A D I N G...</h1>
         </div>
     );
 };

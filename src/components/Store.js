@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react';
 import { ProductsContext } from '../context/ProductContextProvider';    //Context
 import Loading from './Loading';  //Component  
 import Product from "./Product"  //Component
+import styles from "../styles/Store.module.css";
+
 
 const Store = () => {
 
@@ -26,39 +28,43 @@ const Store = () => {
         products.filter(item => item.title.toLowerCase().includes(search.trim().toLowerCase()))
         :
         products
-    ;
+        ;
 
     results = category
         ?
         results.filter(item => item.category.toLowerCase() === (category.toLowerCase()))
         :
         results
-    ;
+        ;
 
 
     return (
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+        <div className={styles.container}>
 
-            <input type="text" placeholder='Search' value={search} onChange={searchHandler} />
+            <div className={styles.searchCategory}>
+                <input className={styles.searchbar} type="text" placeholder="Search..." value={search} onChange={searchHandler} />
 
-            <div>
-                <label>Category: </label>
-                <select onChange={dropdownHandler} name="product-category">
-                    <option value="">All</option>
-                    <option value="men's clothing">Men Clothing</option>
-                    <option value="jewelery">Jewelery</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="women's clothing">Women Clothing</option>
-                </select>
+                <div>
+                    <label>Category: </label>
+                    <select className={styles.dropdown} onChange={dropdownHandler} name="product-category">
+                        <option value="">All</option>
+                        <option value="men's clothing">Men Clothing</option>
+                        <option value="jewelery">Jewelery</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="women's clothing">Women Clothing</option>
+                    </select>
+                </div>
             </div>
 
-            {
-                products.length
-                    ?
-                    <div>{results.map(item => <Product key={item.id} productData={item} />)}</div>
-                    :
-                    <Loading />
-            }
+            <div className={styles.showProducts}>
+                {
+                    products.length
+                        ?
+                        results.map(item => <Product key={item.id} productData={item} />)
+                        :
+                        <Loading />
+                }
+            </div>
         </div>
     );
 };
