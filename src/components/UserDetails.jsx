@@ -1,25 +1,32 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContextProvider';
-import {Link,useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
+import styles from "../styles/UserDetails.module.css";
 
-const UserDetails = (props) => {
+const UserDetails = () => {
 
     const user = useContext(UserContext);
-    
-    
+
+
 
     return (
-        <div>
-        {/* {console.log(user)} */}
-           <p>ID: {user.id}</p>
-           <p>FirstName: {user.name.firstname}</p>
-           <p>LastName: {user.name.lastname}</p>
-           <p>Email: {user.email}</p>
-           <p>City: {user.address.city}</p>
-           <p>Number: {user.address.number}</p>
-           <p>Phone: {user.phone}</p>
-           <Link to="/products">Back to Store</Link>
-        </div>
+        <>
+            <div className={styles.container}>
+                {/* {console.log(user)} */}
+
+                <h3>ID: {user.id}</h3>
+                <h3>First Name: {user?.name?.firstname}</h3>
+                <h3>Last Name: {user?.name?.lastname}</h3>
+                <h3>Email: {user.email}</h3>
+                <h3>City: {user?.address?.city}</h3>
+                <h3>Number: {user?.address?.number}</h3>
+                <h3>Phone: {user.phone}</h3>
+
+            </div>
+            <div className={styles.link}>
+                <Link className={styles.textLink} to="/products">Back to Store</Link>
+            </div>
+        </>
     );
 };
 

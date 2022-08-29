@@ -1,0 +1,11 @@
+.container{
+    text-align: center;
+    margin-left: 350px;
+}
+
+.loading{
+    font-size: 3rem;
+    /* color: rgb(69, 69, 154); */
+    color: lightgreen;
+    font-family: cursive;
+}
