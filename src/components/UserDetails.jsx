@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContextProvider';
 import { Link } from "react-router-dom";
-import styles from "../styles/UserDetails.module.css";
+/* import styles from "../styles/UserDetails.module.css"; */
 
 const UserDetails = () => {
 
@@ -11,7 +11,7 @@ const UserDetails = () => {
 
     return (
         <>
-            <div className={styles.container}>
+            <div>
                 {/* {console.log(user)} */}
 
                 <h3>ID: {user.id}</h3>
@@ -23,8 +23,8 @@ const UserDetails = () => {
                 <h3>Phone: {user.phone}</h3>
 
             </div>
-            <div className={styles.link}>
-                <Link className={styles.textLink} to="/products">Back to Store</Link>
+            <div>
+                <Link to="/products">Back to Store</Link>
             </div>
         </>
     );

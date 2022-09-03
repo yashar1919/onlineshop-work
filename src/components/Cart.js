@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';
 import { shortTitle } from '../helper/functions';   //Function
-import styles from "../styles/Cart.module.css"
 import plus from "../icons/plus.png"
 import minus from "../icons/minus.png"
 import trash from "../icons/trash.svg"  //icon
+/* import styles from "../styles/Cart.module.css" */
 
 
 
@@ -18,14 +18,14 @@ const Cart = (props) => {
 
 
     return (
-        <div className={styles.container}>
-            <p className={styles.number}>{index + 1}</p>
+        <div>
+            <p>{index + 1}</p>
 
-            <div className={styles.data}>
+            <div>
                 <h3>{shortTitle(title)}</h3>
             </div>
 
-            <div className={styles.desc}>
+            <div>
                 <p>{description}</p>
             </div>
 
@@ -33,31 +33,17 @@ const Cart = (props) => {
             {
                 quantity > 1
                     ?
-                    <img className={styles.minus} onClick={() => dispatch({ type: "DECREASE", payload: props.data })} src={minus} />
+                    <img onClick={() => dispatch({ type: "DECREASE", payload: props.data })} src={minus} />
                     :
-                    <img className={styles.minus} src={minus} />
+                    <img src={minus} />
             }
 
-            <span className={styles.quantity}>{quantity}</span>
+            <span>{quantity}</span>
             {/* <button onClick={() => dispatch({ type: "INCREASE", payload: props.data })}><img src={plus}/></button> */}
-            <img className={styles.plus} onClick={() => dispatch({ type: "INCREASE", payload: props.data })} src={plus} />
-
-            {/*            <div>
-
-                {                 <div className={styles.buttonContainer}>
-                    {
-                        quantity > 1
-                            ?
-                            <button onClick={() => dispatch({ type: "DECREASE", payload: props.data })}>-</button>
-                            :
-                            <button>-</button>
-                    }
-                    <button onClick={() => dispatch({ type: "INCREASE", payload: props.data })}>+</button>
-                </div> 
-            </div> */}
+            <img onClick={() => dispatch({ type: "INCREASE", payload: props.data })} src={plus} />
 
             <div>
-                <span className={styles.price}>{price}$</span>
+                <span>{price}$</span>
             </div>
 
 

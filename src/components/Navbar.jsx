@@ -6,7 +6,7 @@ import simple from "../icons/simple.png";   //Icon
 import avatar from "../icons/avatar.jpg";   //Icon
 import { Link } from 'react-router-dom';
 import { UserContext } from '../context/UserContextProvider';
-import styles from "../styles/Navbar.module.css";
+/* import styles from "../styles/Navbar.module.css"; */
 
 
 const Navbar = () => {
@@ -16,20 +16,20 @@ const Navbar = () => {
 
 
     return (
-        <div className={styles.mainContainer}>
-            <div className={styles.container}>
-                <img className={styles.avatar} src={avatar} alt='avatarIcon'/>
-                <Link className={styles.userDetails} to="/userdetails">Hi, {user?.name?.firstname}</Link>
+        <div className='bg-gray-200 fixed w-full'>
+            <div className='flex flex-row py-1'>
+                <img className='w-20' src={avatar} alt='avatarIcon'/>
+                <Link className='flex-1' to="/userdetails">Hi, {user?.name?.firstname}</Link>
 
-                <div>
+                <div className='flex-1'>
                     <Link to="/products">
-                        <img className={styles.logoIcon} src={simple} alt="logoIcon"/>
+                        <img className='w-20' src={simple} alt="logoIcon"/>
                     </Link>
                 </div>
 
-                <div className={styles.iconContainer}>
+                <div className='flex-1'>
                     <Link to="/cart">
-                        <img src={cart} alt="cartIcon" />
+                        <img className='w-10' src={cart} alt="cartIcon" />
                     </Link>
                     <span>{state.itemsCounter}</span>
                 </div>
