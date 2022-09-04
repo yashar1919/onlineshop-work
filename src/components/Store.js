@@ -42,9 +42,9 @@ const Store = () => {
         <div>
 
             <div className='flex justify-around'>
-                <input className='h-8 p-2 rounded-full border-2 w-80' type="text" placeholder="Search..." value={search} onChange={searchHandler} />
+                <input className='mt-36 h-8 p-2 rounded-full border-2 w-80' type="text" placeholder="Search..." value={search} onChange={searchHandler} />
 
-                <div>
+                <div className='mt-36'>
                     <label className='mx-3 font-bold'>Category: </label>
                     <select className='w-96 px-1 border-b-2 border-gray-600' onChange={dropdownHandler} name="product-category">
                         <option value="">All</option>
