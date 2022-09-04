@@ -16,22 +16,22 @@ const Navbar = () => {
 
 
     return (
-        <div className='bg-gray-200 fixed w-full'>
-            <div className='flex flex-row py-1'>
-                <img className='w-20' src={avatar} alt='avatarIcon'/>
-                <Link className='flex-1' to="/userdetails">Hi, {user?.name?.firstname}</Link>
+        <div className='bg-white fixed w-full shadow-xl'>
+            <div className='flex py-1'>
+                <img className='w-20 ml-2' src={avatar} alt='avatarIcon'/>
+                <Link className='flex items-center ml-2 mr-32 font-bold' to="/userdetails">Hi, {user?.name?.firstname}</Link>
 
-                <div className='flex-1'>
+                <div className='flex-1 ml-96 '>
                     <Link to="/products">
-                        <img className='w-20' src={simple} alt="logoIcon"/>
+                        <img className='w-36' src={simple} alt="logoIcon"/>
                     </Link>
                 </div>
 
-                <div className='flex-1'>
+                <div className='flex-initial mr-10 items-center flex'>
                     <Link to="/cart">
-                        <img className='w-10' src={cart} alt="cartIcon" />
+                        <img className='w-14 relative' src={cart} alt="cartIcon" />
                     </Link>
-                    <span>{state.itemsCounter}</span>
+                    <span className='absolute text-center ml-4 mb-10 bg-blue-800 rounded-full text-white font-bold px-1.5'>{state.itemsCounter}</span>
                 </div>
 
             </div>
