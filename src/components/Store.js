@@ -58,7 +58,7 @@ const Store = () => {
 
             <div className="p-3 m-3 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 {
-                    products.length === 0
+                    products.length
                         ?
                         results.map(item => <Product key={item.id} productData={item} />)
                         :

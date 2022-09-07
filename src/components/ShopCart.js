@@ -31,17 +31,17 @@ const ShopCart = () => {
 
             {
                 state.checkout &&
-                <div>
-                    <h3>Checked Out Successfully</h3>
-                    <Link to="/products">Buy More</Link>
+                <div className='text-center mt-12'>
+                    <h3 className='text-2xl font-bold mb-8 '>Checked Out Successfully😎</h3>
+                    <Link className='bg-green-600 rounded-lg text-white py-1 px-2 hover:bg-green-800' to="/products">Buy More</Link>
                 </div>
             }
 
             {
                 !state.checkout && state.itemsCounter === 0 &&
-                <div>
-                    <h3>Want to shop more?</h3>
-                    <Link to="/products">Back to Shop</Link>
+                <div className='text-center mt-12'>
+                    <h3 className='text-xl font-bold mb-8'>Want to shop more?</h3>
+                    <Link className='bg-green-600 rounded-lg text-white py-1 px-2 hover:bg-green-800' to="/products">Back to Shop</Link>
                 </div>
             }
 
