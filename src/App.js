@@ -14,12 +14,14 @@ function App() {
       <CartContextProvider>
         <UserContextProvider>
           <Navbar />
-          <Routes>
-            <Route path="/products" element={<Store />} />
-            <Route path="/userdetails" element={<UserDetails />} />
-            <Route path="/cart" element={<ShopCart />} />
-            <Route path="/*" element={<Navigate to="/products" />} />
-          </Routes>
+          <div className='mt-[90px] p-3 pb-32 bg-white'>
+            <Routes>
+              <Route path="/products" element={<Store />} />
+              <Route path="/userdetails" element={<UserDetails />} />
+              <Route path="/cart" element={<ShopCart />} />
+              <Route path="/*" element={<Navigate to="/products" />} />
+            </Routes>
+          </div>
         </UserContextProvider>
       </CartContextProvider>
     </ProductContextProvider>

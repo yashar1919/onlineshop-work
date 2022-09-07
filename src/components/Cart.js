@@ -18,14 +18,14 @@ const Cart = (props) => {
 
 
     return (
-        <div>
-            <p>{index + 1}</p>
+        <div className='flex mx-2 items-center border-4 border-cyan-700 my-4 px-5'>
+            <p className='mr-20 font-bold text-teal-700'>{index + 1}</p>
 
-            <div>
+            <div className='mr-20 w-20'>
                 <h3>{shortTitle(title)}</h3>
             </div>
 
-            <div>
+            <div className='mr-20 w-[700px]'>
                 <p>{description}</p>
             </div>
 
@@ -33,22 +33,22 @@ const Cart = (props) => {
             {
                 quantity > 1
                     ?
-                    <img onClick={() => dispatch({ type: "DECREASE", payload: props.data })} src={minus} />
+                    <img className='cursor-pointer w-[28px]' onClick={() => dispatch({ type: "DECREASE", payload: props.data })} src={minus} />
                     :
-                    <img src={minus} />
+                    <img className='cursor-pointer w-[28px]' src={minus} />
             }
 
-            <span>{quantity}</span>
+            <span className='mx-5 font-bold text-fuchsia-600 text-xl w-3'>{quantity}</span>
             {/* <button onClick={() => dispatch({ type: "INCREASE", payload: props.data })}><img src={plus}/></button> */}
-            <img onClick={() => dispatch({ type: "INCREASE", payload: props.data })} src={plus} />
+            <img className='cursor-pointer w-7' onClick={() => dispatch({ type: "INCREASE", payload: props.data })} src={plus} />
 
-            <div>
+            <div className='mx-20 font-bold text-green-700 w-20'>
                 <span>{price}$</span>
             </div>
 
 
-            <div>
-                <img onClick={() => dispatch({ type: "REMOVE_ITEM", payload: props.data })} src={trash} alt="trashIcon" />
+            <div className='mr-5 cursor-pointer w-5'>
+                <img className='w-10 max-w-none' onClick={() => dispatch({ type: "REMOVE_ITEM", payload: props.data })} src={trash} alt="trashIcon" />
             </div>
         </div>
     );

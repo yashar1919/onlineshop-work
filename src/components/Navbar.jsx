@@ -16,7 +16,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='bg-white fixed w-full shadow-xl'>
+        <div className='bg-white fixed w-full shadow-xl top-0'>
             <div className='flex py-1'>
                 <img className='w-20 ml-2' src={avatar} alt='avatarIcon'/>
                 <Link className='flex items-center ml-2 mr-32 font-bold' to="/userdetails">Hi, {user?.name?.firstname}</Link>

@@ -15,16 +15,16 @@ const Product = ({ productData }) => {
     const { state, dispatch } = useContext(CartContext);
 
     return (
-        <div className='flex flex-col w-80 p-2 bg-white rounded-lg hover:shadow-xl'>
-            <img className='w-56 h-60' src={productData.image} alt="product" />
+        <div className='flex flex-col w-80 p-2 bg-gray-100 rounded-lg hover:shadow-xl border-2 border-gray-300'>
+            <img className='w-56 h-60 mx-auto' src={productData.image} alt="product" />
             <h3 className='text-center text-xl font-bold'>{shortTitle(productData.title)}</h3>
 
             <p className='text-sm'>{productData.description}</p>
 
 
-            <div className='flex mt-auto justify-around mb-2'>
+            <div className='flex mt-auto justify-around mb-2 h-8'>
                 <span className='text-green-600 font-bold text-lg'>{`${productData.price} $`}</span>
-                <div className='justify-center flex'>
+                <div className='justify-center flex w-[50%]'>
                 
                     {
                         quantityCount(productData.id, state) > 1
@@ -43,7 +43,7 @@ const Product = ({ productData }) => {
                     {
                         quantityCount(productData.id, state) > 0
                         &&
-                        <span className='text-blue-700 text-lg font-bold'>{quantityCount(productData.id, state)}</span>
+                        <span className='text-blue-700 text-lg font-bold mt-1'>{quantityCount(productData.id, state)}</span>
                     }
 
 
@@ -55,9 +55,6 @@ const Product = ({ productData }) => {
                             :
                             <button className='bg-blue-700 shadow-lg shadow-blue-500/50 px-3 py-1 rounded-md text-white hover:bg-blue-900' onClick={() => dispatch({ type: "ADD_ITEM", payload: productData })}>Add to Cart</button>
                     }
-
-
-
 
                 </div>
             </div>
