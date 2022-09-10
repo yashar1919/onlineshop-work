@@ -5,28 +5,12 @@ const shortTitle = (title) => {
 }
 export { shortTitle };
 
-
-
-const breakLine = (description) => {
-    const res = [];
-    for (let i = 0; i < description.length; i += 50) {
-        const chunk = description.slice(i,  i + 50);
-        res.push(chunk);
-    }
-    return res;
-}
-export { breakLine }
-
-
-
 // Is the desired product ID available in my shopping cart?
 const isInCart = (id, state) => {
     const result = !!(state.selectedItems.find(item => item.id === id));
     return result;
 }
 export { isInCart };
-
-
 
 // Counts the products in the Cart
 const quantityCount = (id, state) => {
@@ -37,5 +21,4 @@ const quantityCount = (id, state) => {
         return state.selectedItems[index].quantity;
     }
 }
-
 export { quantityCount };

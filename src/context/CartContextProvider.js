@@ -1,6 +1,5 @@
 import React, { createContext, useReducer } from 'react';
 
-
 const initialState = {
     selectedItems: [],  // This Array contains the products that the user has selected
     itemsCounter: 0,    // The total number of products selected by the user
@@ -20,10 +19,7 @@ const sumItems = (items) => {
     }
 }
 
-
 const cartReducer = (state, action) => {
-
-
     switch (action.type) {
         case "ADD_ITEM":
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
@@ -38,7 +34,6 @@ const cartReducer = (state, action) => {
                 ...sumItems(state.selectedItems),
                 checkout: false
             }
-
 
         case "REMOVE_ITEM":
             const newSelectedItem = state.selectedItems.filter(item => item.id !== action.payload.id);
@@ -87,14 +82,10 @@ const cartReducer = (state, action) => {
     }
 }
 
-
 export const CartContext = createContext();
 
-
 const CartContextProvider = (props) => {
-
     const [state, dispatch] = useReducer(cartReducer, initialState);
-
     return (
         <CartContext.Provider value={{ state, dispatch }}>
             {props.children}
