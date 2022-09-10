@@ -4,9 +4,9 @@ import Navbar from './components/Navbar'; //Component
 import ProductContextProvider from './context/ProductContextProvider';  //Context
 import CartContextProvider from './context/CartContextProvider';  //Context
 import { Route, Routes, Navigate } from "react-router-dom";
-import ShopCart from './components/ShopCart';
-import UserDetails from './components/UserDetails';
-import UserContextProvider from './context/UserContextProvider';
+import ShopCart from './components/ShopCart'; //Component
+import UserDetails from './components/UserDetails'; //Component
+import UserContextProvider from './context/UserContextProvider';  //Context
 
 function App() {
   return (

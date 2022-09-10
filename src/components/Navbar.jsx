@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';    //Context
 import cart from "../icons/cart.png";   //Icon
-import logo from "../icons/logo.png";   //Icon
 import simple from "../icons/simple.png";   //Icon
 import avatar from "../icons/avatar.jpg";   //Icon
 import { Link } from 'react-router-dom';
-import { UserContext } from '../context/UserContextProvider';
-/* import styles from "../styles/Navbar.module.css"; */
+import { UserContext } from '../context/UserContextProvider';    //Context
 
 
 const Navbar = () => {

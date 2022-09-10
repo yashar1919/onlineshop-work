@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../context/CartContextProvider"  //context
 import Cart from './Cart';  //Component
-/* import styles from "../styles/ShopCart.module.css" */
 
 
 

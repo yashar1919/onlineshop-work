@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContextProvider';
+import { CartContext } from '../context/CartContextProvider';   //Context
 import { shortTitle } from '../helper/functions';   //Function
-import plus from "../icons/plus.png"
-import minus from "../icons/minus.png"
+import plus from "../icons/plus.png"  //icon
+import minus from "../icons/minus.png"  //icon
 import trash from "../icons/trash.svg"  //icon
-/* import styles from "../styles/Cart.module.css" */
 
 
 
@@ -39,7 +38,7 @@ const Cart = (props) => {
             }
 
             <span className='mx-5 font-bold text-fuchsia-600 text-xl w-3'>{quantity}</span>
-            {/* <button onClick={() => dispatch({ type: "INCREASE", payload: props.data })}><img src={plus}/></button> */}
+            
             <img className='cursor-pointer w-7' onClick={() => dispatch({ type: "INCREASE", payload: props.data })} src={plus} />
 
             <div className='mx-20 font-bold text-green-700 w-20'>

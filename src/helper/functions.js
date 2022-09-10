@@ -17,10 +17,6 @@ const breakLine = (description) => {
 }
 export { breakLine }
 
-/* 
-breakLine(description, 20).join('<br/>')
-{breakLine(description, 20).map(x => ({x}<br/>))} */
-
 
 
 // Is the desired product ID available in my shopping cart?
@@ -29,6 +25,7 @@ const isInCart = (id, state) => {
     return result;
 }
 export { isInCart };
+
 
 
 // Counts the products in the Cart

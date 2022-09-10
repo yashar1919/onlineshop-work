@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';   //Context
 import { shortTitle, isInCart, quantityCount } from '../helper/functions';   //Function
-//import { breakLine } from '../helper/functions';    //Function
 import trash from "../icons/trash.svg"  //icon
-/* import styles from "../styles/Product.module.css"; */
-
 
 
 

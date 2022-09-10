@@ -1,6 +1,6 @@
 import React from 'react';
-import loader from "../icons/loader.gif";
-/* import styles from "../styles/Loading.module.css"; */
+import loader from "../icons/loader.gif";   //icon
+
 
 const Loading = () => {
     return (

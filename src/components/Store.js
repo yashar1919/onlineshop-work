@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
-
 import { ProductsContext } from '../context/ProductContextProvider';    //Context
 import Loading from './Loading';  //Component  
 import Product from "./Product"  //Component
-/* import styles from "../styles/Store.module.css"; */
+
 
 
 const Store = () => {
